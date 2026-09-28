@@ -1,12 +1,43 @@
-const eventPack={eventName:"Coming soon",eventNote:"Waiting for the next Shotaro moment ♡",keywords:[],hashtags:[],comments:[]};
-const demo=[{text:"Shotaro, you make every moment feel extra special. ♡",cat:["love"]},{text:"You look incredible today, Shotaro!",cat:["outfit","short"]},{text:"Always so proud of you, Shotaro. Keep shining! ♡",cat:["support"]},{text:"Shotaro, you were made for moments like this.",cat:["event"]},{text:"Our brightest star, always. ♡",cat:["love","short"]},{text:"Every detail of this look suits you perfectly.",cat:["outfit"]}];
-let active="all",last=-1;const $=id=>document.getElementById(id),comment=$("comment"),num=$("num"),generate=$("generate"),status=$("status");
-function pool(){return active==="all"?demo:demo.filter(x=>x.cat.includes(active))}
-function random(){const p=pool();if(!p.length)return;let x,i;do{x=p[Math.floor(Math.random()*p.length)];i=demo.indexOf(x)}while(p.length>1&&i===last);last=i;comment.textContent=x.text;num.textContent="# "+String(i+1).padStart(3,"0");generate.innerHTML="↝ &nbsp; ANOTHER ONE";status.textContent=""}
-async function copy(t,msg="copied! ♡"){if(!t)return;try{await navigator.clipboard.writeText(t)}catch{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()}status.textContent=msg;setTimeout(()=>status.textContent="",1500)}
-generate.onclick=random;$("copy").onclick=()=>{if(num.textContent!=="# 000")copy(comment.textContent)};
-document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chips button").forEach(x=>x.classList.remove("active"));b.classList.add("active");active=b.dataset.cat;last=-1;random()});
-$("eventName").textContent=eventPack.eventName;$("eventNote").textContent=eventPack.eventNote;
-if(eventPack.keywords.length){$("keywords").textContent=eventPack.keywords.join(" · ");$("copyKeywords").disabled=false}
-if(eventPack.hashtags.length){$("hashtags").textContent=eventPack.hashtags.join(" ");$("copyHashtags").disabled=false}
-$("copyKeywords").onclick=()=>copy(eventPack.keywords.join(" "),"keywords copied! ♡");$("copyHashtags").onclick=()=>copy(eventPack.hashtags.join(" "),"hashtags copied! ♡");
+// Comment bank intentionally left empty while the site structure is being finalized.
+const comments = [];
+
+const commentEl = document.getElementById("comment");
+const generateBtn = document.getElementById("generateBtn");
+const copyBtn = document.getElementById("copyBtn");
+const statusEl = document.getElementById("status");
+
+let currentComment = "";
+let lastIndex = -1;
+
+generateBtn.addEventListener("click", () => {
+  if (!comments.length) return;
+
+  let index;
+  do {
+    index = Math.floor(Math.random() * comments.length);
+  } while (comments.length > 1 && index === lastIndex);
+
+  lastIndex = index;
+  currentComment = comments[index];
+  commentEl.textContent = currentComment;
+  copyBtn.disabled = false;
+  statusEl.textContent = "";
+});
+
+copyBtn.addEventListener("click", async () => {
+  if (!currentComment) return;
+
+  try {
+    await navigator.clipboard.writeText(currentComment);
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = currentComment;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    textarea.remove();
+  }
+
+  statusEl.textContent = "COPIED ♡";
+  setTimeout(() => statusEl.textContent = "", 1400);
+});

@@ -1,44 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Say It for Shotaro</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf2f1">
+  <title>Say It for Shotaro</title>
+  <meta name="description" content="Little words for every Shotaro moment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="page">
-<header><a class="logo" href="#">SAY IT FOR <b>SHOTARO ♡</b></a><nav><a href="#home">HOME</a><a href="#event">EVENT</a><a href="#pack">KEYWORDS</a></nav><span class="tinybear">ʕ•ᴥ•ʔ</span></header>
+  <main class="page">
+    <header class="hero">
+      <p class="say-it">SAY IT FOR</p>
+      <h1>SHOTARO <span>♡</span></h1>
+      <p class="tagline">little words for every Shotaro moment.</p>
+    </header>
 
-<section class="hero" id="home">
-<div class="intro"><p class="eyebrow">A LITTLE SPACE FOR WORDS ABOUT SHOTARO.</p><h1>SAY IT<br>FOR<br>SHOTARO <i>♡</i></h1><p class="note">For every look, every stage,<br>and every little Shotaro moment.</p></div>
-<div class="generator">
-<p class="scribble">say something<br>nice today! ♡</p>
-<div class="bear">
-<div class="ear left"><span></span></div><div class="ear right"><span></span></div>
-<div class="face"><span></span><b>•</b><span></span></div>
-<p class="num" id="num"># 000</p><p class="comment" id="comment">What should we say today?</p><em>♡</em>
-</div>
-<div class="actions"><button class="primary" id="generate">↝ &nbsp; SAY SOMETHING</button><button id="copy">▢ &nbsp; COPY</button></div>
-<p class="status" id="status"></p>
-</div>
-</section>
+    <section class="generator" aria-label="Shotaro comment generator">
+      <div class="bear-card" aria-live="polite">
+        <div class="ear ear-left" aria-hidden="true"></div>
+        <div class="ear ear-right" aria-hidden="true"></div>
+        <p id="comment">Your comment<br>will appear here.</p>
+      </div>
 
-<section class="topics"><h2>● &nbsp; WHAT ARE WE TALKING ABOUT?</h2>
-<div class="chips"><button class="active" data-cat="all">ALL</button><button data-cat="outfit">OUTFIT</button><button data-cat="event">EVENT</button><button data-cat="love">LOVE</button><button data-cat="support">SUPPORT</button><button data-cat="short">SHORT</button></div>
-</section>
+      <button class="primary" id="generateBtn" type="button">GET A LINE</button>
+      <button class="secondary" id="copyBtn" type="button" disabled>
+        <span aria-hidden="true">▢</span> COPY
+      </button>
+      <p class="status" id="status" aria-live="polite"></p>
+    </section>
 
-<section id="event" class="event"><div class="sectionhead"><h2>☆ &nbsp; CURRENT MOMENT</h2><span></span></div>
-<div class="eventcard"><div><small>NEXT /</small><h3 id="eventName">Coming soon</h3><p id="eventNote">Waiting for the next Shotaro moment ♡</p></div><div class="doodle">ʕ•ᴥ•ʔ</div></div>
-</section>
-
-<section class="pack" id="pack">
-<div><small>KEYWORDS</small><p id="keywords">Coming with the next event.</p><button id="copyKeywords" disabled>COPY</button></div>
-<div><small>HASHTAGS</small><p id="hashtags">Coming with the next event.</p><button id="copyHashtags" disabled>COPY</button></div>
-</section>
-
-<footer><span>SAY IT FOR SHOTARO ♡</span><span>MADE BY FANS, FOR SHOTARO.</span></footer>
-</main><script src="script.js"></script>
-</body></html>
+    <footer>
+      <div class="footer-mark"><span></span><b>♡</b><span></span></div>
+      <p>MADE WITH ♡ FOR SHOTARO</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
