@@ -1,73 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f3f0e8" />
-  <title>Say It for Shotaro</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Say It for Shotaro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">A LITTLE SPACE FOR SHOTARO</p>
-      <h1>Say It<br><em>for Shotaro.</em></h1>
-      <p class="intro">Find the right words for every Shotaro moment.</p>
-    </header>
+<main class="page">
+<header><a class="logo" href="#">SAY IT FOR <b>SHOTARO ♡</b></a><nav><a href="#home">HOME</a><a href="#event">EVENT</a><a href="#pack">KEYWORDS</a></nav><span class="tinybear">ʕ•ᴥ•ʔ</span></header>
 
-    <section class="generator-card" aria-labelledby="generator-title">
-      <div class="card-topline">
-        <span id="generator-title">YOUR LINE</span>
-        <span class="status-dot" aria-hidden="true"></span>
-      </div>
+<section class="hero" id="home">
+<div class="intro"><p class="eyebrow">A LITTLE SPACE FOR WORDS ABOUT SHOTARO.</p><h1>SAY IT<br>FOR<br>SHOTARO <i>♡</i></h1><p class="note">For every look, every stage,<br>and every little Shotaro moment.</p></div>
+<div class="generator">
+<p class="scribble">say something<br>nice today! ♡</p>
+<div class="bear">
+<div class="ear left"><span></span></div><div class="ear right"><span></span></div>
+<div class="face"><span></span><b>•</b><span></span></div>
+<p class="num" id="num"># 000</p><p class="comment" id="comment">What should we say today?</p><em>♡</em>
+</div>
+<div class="actions"><button class="primary" id="generate">↝ &nbsp; SAY SOMETHING</button><button id="copy">▢ &nbsp; COPY</button></div>
+<p class="status" id="status"></p>
+</div>
+</section>
 
-      <div class="comment-area" id="comment" aria-live="polite">
-        Your comment will appear here.
-      </div>
+<section class="topics"><h2>● &nbsp; WHAT ARE WE TALKING ABOUT?</h2>
+<div class="chips"><button class="active" data-cat="all">ALL</button><button data-cat="outfit">OUTFIT</button><button data-cat="event">EVENT</button><button data-cat="love">LOVE</button><button data-cat="support">SUPPORT</button><button data-cat="short">SHORT</button></div>
+</section>
 
-      <div class="actions">
-        <button class="btn btn-primary" id="generateBtn" type="button">GET A LINE</button>
-        <button class="btn btn-secondary" id="copyBtn" type="button">COPY</button>
-      </div>
-      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
-    </section>
+<section id="event" class="event"><div class="sectionhead"><h2>☆ &nbsp; CURRENT MOMENT</h2><span></span></div>
+<div class="eventcard"><div><small>NEXT /</small><h3 id="eventName">Coming soon</h3><p id="eventNote">Waiting for the next Shotaro moment ♡</p></div><div class="doodle">ʕ•ᴥ•ʔ</div></div>
+</section>
 
-    <section class="event-section">
-      <div class="section-heading">
-        <span>NOW</span>
-        <span class="rule"></span>
-      </div>
-      <div class="event-card">
-        <div>
-          <p class="event-label">CURRENT EVENT</p>
-          <h2 id="eventName">Coming soon</h2>
-        </div>
-        <p class="event-note" id="eventNote">We’ll update this space when Shotaro’s next event is announced.</p>
-      </div>
-    </section>
+<section class="pack" id="pack">
+<div><small>KEYWORDS</small><p id="keywords">Coming with the next event.</p><button id="copyKeywords" disabled>COPY</button></div>
+<div><small>HASHTAGS</small><p id="hashtags">Coming with the next event.</p><button id="copyHashtags" disabled>COPY</button></div>
+</section>
 
-    <section class="info-grid">
-      <article class="info-card">
-        <p class="info-label">KEYWORDS</p>
-        <p id="keywords">Coming soon</p>
-        <button class="text-button" id="copyKeywords" type="button" disabled>COPY KEYWORDS</button>
-      </article>
-      <article class="info-card">
-        <p class="info-label">HASHTAGS</p>
-        <p id="hashtags">Coming soon</p>
-        <button class="text-button" id="copyHashtags" type="button" disabled>COPY HASHTAGS</button>
-      </article>
-    </section>
-
-    <footer>
-      <p>SAY IT FOR SHOTARO</p>
-      <p>Made with care for every Shotaro moment.</p>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<footer><span>SAY IT FOR SHOTARO ♡</span><span>MADE BY FANS, FOR SHOTARO.</span></footer>
+</main><script src="script.js"></script>
+</body></html>

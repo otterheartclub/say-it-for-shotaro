@@ -1,76 +1,12 @@
-// ============================================================
-// SAY IT FOR SHOTARO — CONTENT AREA
-// Later, we only need to edit this section for each event.
-// ============================================================
-
-const eventPack = {
-  eventName: "Coming soon",
-  eventNote: "We’ll update this space when Shotaro’s next event is announced.",
-  keywords: [],
-  hashtags: [],
-  comments: []
-};
-
-// ============================================================
-// SITE LOGIC — no need to edit this for normal event updates.
-// ============================================================
-
-const commentEl = document.getElementById("comment");
-const generateBtn = document.getElementById("generateBtn");
-const copyBtn = document.getElementById("copyBtn");
-const copyStatus = document.getElementById("copyStatus");
-const eventNameEl = document.getElementById("eventName");
-const eventNoteEl = document.getElementById("eventNote");
-const keywordsEl = document.getElementById("keywords");
-const hashtagsEl = document.getElementById("hashtags");
-const copyKeywordsBtn = document.getElementById("copyKeywords");
-const copyHashtagsBtn = document.getElementById("copyHashtags");
-
-let lastIndex = -1;
-
-eventNameEl.textContent = eventPack.eventName;
-eventNoteEl.textContent = eventPack.eventNote;
-
-if (eventPack.keywords.length) {
-  keywordsEl.textContent = eventPack.keywords.join(" · ");
-  copyKeywordsBtn.disabled = false;
-}
-if (eventPack.hashtags.length) {
-  hashtagsEl.textContent = eventPack.hashtags.join(" ");
-  copyHashtagsBtn.disabled = false;
-}
-
-function getRandomIndex(length) {
-  if (length <= 1) return 0;
-  let next;
-  do { next = Math.floor(Math.random() * length); } while (next === lastIndex);
-  return next;
-}
-
-function generateComment() {
-  if (!eventPack.comments.length) {
-    commentEl.textContent = "Lines are coming soon. ♡";
-    copyStatus.textContent = "We’ll add the comment pack when the event is confirmed.";
-    return;
-  }
-  const index = getRandomIndex(eventPack.comments.length);
-  lastIndex = index;
-  commentEl.textContent = eventPack.comments[index];
-  copyStatus.textContent = "";
-}
-
-async function copyText(text, successMessage) {
-  if (!text || text.includes("appear here") || text.includes("coming soon")) return;
-  try {
-    await navigator.clipboard.writeText(text);
-    copyStatus.textContent = successMessage;
-    setTimeout(() => { copyStatus.textContent = ""; }, 1800);
-  } catch {
-    copyStatus.textContent = "Copy didn’t work — press and hold the text to copy.";
-  }
-}
-
-generateBtn.addEventListener("click", generateComment);
-copyBtn.addEventListener("click", () => copyText(commentEl.textContent, "Copied! ♡"));
-copyKeywordsBtn.addEventListener("click", () => copyText(eventPack.keywords.join(" "), "Keywords copied!"));
-copyHashtagsBtn.addEventListener("click", () => copyText(eventPack.hashtags.join(" "), "Hashtags copied!"));
+const eventPack={eventName:"Coming soon",eventNote:"Waiting for the next Shotaro moment ♡",keywords:[],hashtags:[],comments:[]};
+const demo=[{text:"Shotaro, you make every moment feel extra special. ♡",cat:["love"]},{text:"You look incredible today, Shotaro!",cat:["outfit","short"]},{text:"Always so proud of you, Shotaro. Keep shining! ♡",cat:["support"]},{text:"Shotaro, you were made for moments like this.",cat:["event"]},{text:"Our brightest star, always. ♡",cat:["love","short"]},{text:"Every detail of this look suits you perfectly.",cat:["outfit"]}];
+let active="all",last=-1;const $=id=>document.getElementById(id),comment=$("comment"),num=$("num"),generate=$("generate"),status=$("status");
+function pool(){return active==="all"?demo:demo.filter(x=>x.cat.includes(active))}
+function random(){const p=pool();if(!p.length)return;let x,i;do{x=p[Math.floor(Math.random()*p.length)];i=demo.indexOf(x)}while(p.length>1&&i===last);last=i;comment.textContent=x.text;num.textContent="# "+String(i+1).padStart(3,"0");generate.innerHTML="↝ &nbsp; ANOTHER ONE";status.textContent=""}
+async function copy(t,msg="copied! ♡"){if(!t)return;try{await navigator.clipboard.writeText(t)}catch{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()}status.textContent=msg;setTimeout(()=>status.textContent="",1500)}
+generate.onclick=random;$("copy").onclick=()=>{if(num.textContent!=="# 000")copy(comment.textContent)};
+document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".chips button").forEach(x=>x.classList.remove("active"));b.classList.add("active");active=b.dataset.cat;last=-1;random()});
+$("eventName").textContent=eventPack.eventName;$("eventNote").textContent=eventPack.eventNote;
+if(eventPack.keywords.length){$("keywords").textContent=eventPack.keywords.join(" · ");$("copyKeywords").disabled=false}
+if(eventPack.hashtags.length){$("hashtags").textContent=eventPack.hashtags.join(" ");$("copyHashtags").disabled=false}
+$("copyKeywords").onclick=()=>copy(eventPack.keywords.join(" "),"keywords copied! ♡");$("copyHashtags").onclick=()=>copy(eventPack.hashtags.join(" "),"hashtags copied! ♡");
