@@ -1,12 +1,12 @@
 :root {
-  --cream: #f3f0e8;
-  --paper: #faf8f2;
-  --ink: #252821;
-  --muted: #73786e;
-  --sage: #aeb9a5;
-  --sage-dark: #596454;
-  --line: #d8d9d0;
-  --white: #fffef9;
+  --cream: #f8f1f0;
+  --paper: #fff9f7;
+  --ink: #302725;
+  --muted: #8c7774;
+  --sage: #d7a3a4;
+  --sage-dark: #9d454a;
+  --line: #e5d4d1;
+  --white: #fffaf8;
 }
 
 * { box-sizing: border-box; }
