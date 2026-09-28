@@ -2,62 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8eeee">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf2f1">
   <title>Say It for Shotaro</title>
-  <meta name="description" content="Find the right words for every Shotaro moment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="shell">
-    <header class="brand">
-      <p class="eyebrow">A LITTLE SPACE FOR SHOTARO</p>
-      <h1>Say It <span>for Shotaro.</span></h1>
-      <p class="intro">Find the right words for every Shotaro moment.</p>
+  <main class="page">
+    <header>
+      <div class="title-wrap">
+        <div class="small-title">SAY IT FOR</div>
+        <div class="big-title">SHOTARO <span>♡</span></div>
+      </div>
+      <p class="tagline">little words for every Shotaro moment.</p>
     </header>
 
-    <section class="generator" aria-label="Comment generator">
-      <p class="label">YOUR LINE</p>
-
-      <div class="bear">
-        <svg class="bear-shape" viewBox="0 0 700 430" aria-hidden="true">
-          <path d="M112 126
-                   C76 103 69 54 98 27
-                   C128 -1 178 8 199 52
-                   C243 35 293 28 350 28
-                   C407 28 457 35 501 52
-                   C522 8 572 -1 602 27
-                   C631 54 624 103 588 126
-                   C625 160 641 211 641 270
-                   L641 291
-                   C641 363 592 399 512 399
-                   L188 399
-                   C108 399 59 363 59 291
-                   L59 270
-                   C59 211 75 160 112 126 Z"/>
+    <section class="generator">
+      <div class="bear-box">
+        <svg class="bear-outline" viewBox="0 0 620 390" preserveAspectRatio="none" aria-hidden="true">
+          <path d="
+            M 72 125
+            C 40 102, 31 55, 58 27
+            C 86 -2, 135 7, 155 47
+            C 198 27, 249 20, 310 20
+            C 371 20, 422 27, 465 47
+            C 485 7, 534 -2, 562 27
+            C 589 55, 580 102, 548 125
+            C 582 158, 596 203, 596 257
+            L 596 280
+            C 596 344, 554 370, 488 370
+            L 132 370
+            C 66 370, 24 344, 24 280
+            L 24 257
+            C 24 203, 38 158, 72 125
+            Z" />
         </svg>
-
-        <div class="line-content">
-          <p id="comment">Your comment will appear here.</p>
-        </div>
+        <p id="comment">Your comment<br>will appear here.</p>
       </div>
 
-      <div class="actions">
-        <button id="generateBtn" class="primary" type="button">GET A LINE</button>
-        <button id="copyBtn" class="secondary" type="button" disabled>
-          <span class="copy-icon" aria-hidden="true"></span>
-          COPY
-        </button>
-      </div>
+      <button id="generateBtn" class="primary" type="button">GET A LINE</button>
+      <button id="copyBtn" class="secondary" type="button" disabled>
+        <span class="copy-icon" aria-hidden="true"></span> COPY
+      </button>
       <p id="status" class="status" aria-live="polite"></p>
     </section>
 
     <footer>
-      <span>SAY IT FOR SHOTARO ♡</span>
-      <span>MADE BY FANS, FOR SHOTARO.</span>
+      <div class="rule"><span></span><b>♡</b><span></span></div>
+      <p>MADE WITH ♡ FOR SHOTARO</p>
     </footer>
   </main>
   <script src="script.js"></script>
